@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>首页 - 一个很长的首页 - 以便于你在收藏夹点到它</title>
+    <link rel="stylesheet" type="text/css" href="../base.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body>
+<div id="title"></div>
+<div id="body"></div>
+<script type="text/javascript" src="../jquery/jquery.js"></script>
+<script type="text/javascript" src="data.js"></script>
+<script>
+    function setBody(key) {
+        let $body = $('#body');
+        $body.empty();
+        let iData = data[key];
+        for (let k in iData) {
+            let url = iData[k].url;
+            let text = iData[k].text;
+
+            let ico;
+            let match = url.match(/^(https?:\/\/[^\/]+)/);
+            if (match) {
+                ico = match[1] + '/favicon.ico';
+            } else {
+                ico = "../img/link.png";
+            }
+
+            let $a = $('<a>', {
+                class: "a-link",
+                href: url,
+            });
+
+            $a.append($('<img>', {
+                class: "link-img",
+                src: ico,
+                onerror: 'this.src = "../img/link.png"',
+            }));
+
+            $a.append($('<p>', {
+                class: "link-p",
+                text: text,
+            }));
+
+            $body.append($a);
+        }
+    }
+
+    $(document).ready(() => {
+        let b = true;
+        for (let k in data) {
+
+            $('#title').append($('<a>', {
+                class: "a-title",
+                href: 'javascript: setBody("' + k + '");',
+            }).append($('<p>', {
+                class: "title-p",
+                text: k,
+            })))
+
+            if (b) {
+                b = false;
+                setBody(k);
+            }
+        }
+    });
+</script>
+</body>
+
+</html>

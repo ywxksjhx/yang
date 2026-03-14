@@ -1,0 +1,2069 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width initial-scale=1'>
+
+    <link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext'
+          rel='stylesheet' type='text/css'/>
+    <style type='text/css'>html {
+        overflow-x: initial !important;
+    }
+
+    :root {
+        --bg-color: #ffffff;
+        --text-color: #333333;
+        --select-text-bg-color: #B5D6FC;
+        --select-text-font-color: auto;
+        --monospace: "Lucida Console", Consolas, "Courier", monospace;
+        --title-bar-height: 20px;
+    }
+
+    .mac-os-11 {
+        --title-bar-height: 28px;
+    }
+
+    html {
+        font-size: 14px;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+        margin: 0px;
+        padding: 0px;
+        height: auto;
+        inset: 0px;
+        font-size: 1rem;
+        line-height: 1.42857;
+        overflow-x: hidden;
+        background: inherit;
+        tab-size: 4;
+    }
+
+    iframe {
+        margin: auto;
+    }
+
+    a.url {
+        word-break: break-all;
+    }
+
+    a:active, a:hover {
+        outline: 0px;
+    }
+
+    .in-text-selection, ::selection {
+        text-shadow: none;
+        background: var(--select-text-bg-color);
+        color: var(--select-text-font-color);
+    }
+
+    #write {
+        margin: 0px auto;
+        height: auto;
+        width: inherit;
+        word-break: normal;
+        overflow-wrap: break-word;
+        position: relative;
+        white-space: normal;
+        overflow-x: visible;
+        padding-top: 36px;
+    }
+
+    #write.first-line-indent p {
+        text-indent: 2em;
+    }
+
+    #write.first-line-indent li p, #write.first-line-indent p * {
+        text-indent: 0px;
+    }
+
+    #write.first-line-indent li {
+        margin-left: 2em;
+    }
+
+    .for-image #write {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    body.typora-export {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .typora-export .footnote-line, .typora-export li, .typora-export p {
+        white-space: pre-wrap;
+    }
+
+    .typora-export .task-list-item input {
+        pointer-events: none;
+    }
+
+    @media screen and (max-width: 500px) {
+        body.typora-export {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        #write {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+
+    #write li > figure:last-child {
+        margin-bottom: 0.5rem;
+    }
+
+    #write ol, #write ul {
+        position: relative;
+    }
+
+    img {
+        max-width: 100%;
+        vertical-align: middle;
+        image-orientation: from-image;
+    }
+
+    button, input, select, textarea {
+        color: inherit;
+        font: inherit;
+    }
+
+    input[type="checkbox"], input[type="radio"] {
+        line-height: normal;
+        padding: 0px;
+    }
+
+    *, ::after, ::before {
+        box-sizing: border-box;
+    }
+
+    #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre {
+        width: inherit;
+    }
+
+    #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p {
+        position: relative;
+    }
+
+    p {
+        line-height: inherit;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        break-after: avoid-page;
+        break-inside: avoid;
+        orphans: 4;
+    }
+
+    p {
+        orphans: 4;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.6rem;
+    }
+
+    h4 {
+        font-size: 1.4rem;
+    }
+
+    h5 {
+        font-size: 1.2rem;
+    }
+
+    h6 {
+        font-size: 1rem;
+    }
+
+    .md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .md-blockmeta {
+        color: rgb(204, 204, 204);
+        font-weight: 700;
+        font-style: italic;
+    }
+
+    a {
+        cursor: pointer;
+    }
+
+    sup.md-footnote {
+        padding: 2px 4px;
+        background-color: rgba(238, 238, 238, 0.7);
+        color: rgb(85, 85, 85);
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    sup.md-footnote a, sup.md-footnote a:hover {
+        color: inherit;
+        text-transform: inherit;
+        text-decoration: inherit;
+    }
+
+    #write input[type="checkbox"] {
+        cursor: pointer;
+        width: inherit;
+        height: inherit;
+    }
+
+    figure {
+        overflow-x: auto;
+        margin: 1.2em 0px;
+        max-width: calc(100% + 16px);
+        padding: 0px;
+    }
+
+    figure > table {
+        margin: 0px;
+    }
+
+    thead, tr {
+        break-inside: avoid;
+        break-after: auto;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0px;
+        width: 100%;
+        overflow: auto;
+        break-inside: auto;
+        text-align: left;
+    }
+
+    table.md-table td {
+        min-width: 32px;
+    }
+
+    .CodeMirror-gutters {
+        border-right: 0px;
+        background-color: inherit;
+    }
+
+    .CodeMirror-linenumber {
+        user-select: none;
+    }
+
+    .CodeMirror {
+        text-align: left;
+    }
+
+    .CodeMirror-placeholder {
+        opacity: 0.3;
+    }
+
+    .CodeMirror pre {
+        padding: 0px 4px;
+    }
+
+    .CodeMirror-lines {
+        padding: 0px;
+    }
+
+    div.hr:focus {
+        cursor: none;
+    }
+
+    #write pre {
+        white-space: pre-wrap;
+    }
+
+    #write.fences-no-line-wrapping pre {
+        white-space: pre;
+    }
+
+    #write pre.ty-contain-cm {
+        white-space: normal;
+    }
+
+    .CodeMirror-gutters {
+        margin-right: 4px;
+    }
+
+    .md-fences {
+        font-size: 0.9rem;
+        display: block;
+        break-inside: avoid;
+        text-align: left;
+        overflow: visible;
+        white-space: pre;
+        background: inherit;
+        position: relative !important;
+    }
+
+    .md-fences-adv-panel {
+        width: 100%;
+        margin-top: 10px;
+        text-align: center;
+        padding-top: 0px;
+        padding-bottom: 8px;
+        overflow-x: auto;
+    }
+
+    #write .md-fences.mock-cm {
+        white-space: pre-wrap;
+    }
+
+    .md-fences.md-fences-with-lineno {
+        padding-left: 0px;
+    }
+
+    #write.fences-no-line-wrapping .md-fences.mock-cm {
+        white-space: pre;
+        overflow-x: auto;
+    }
+
+    .md-fences.mock-cm.md-fences-with-lineno {
+        padding-left: 8px;
+    }
+
+    .CodeMirror-line, twitterwidget {
+        break-inside: avoid;
+    }
+
+    svg {
+        break-inside: avoid;
+    }
+
+    .footnotes {
+        opacity: 0.8;
+        font-size: 0.9rem;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+
+    .footnotes + .footnotes {
+        margin-top: 0px;
+    }
+
+    .md-reset {
+        margin: 0px;
+        padding: 0px;
+        border: 0px;
+        outline: 0px;
+        vertical-align: top;
+        background: 0px 0px;
+        text-decoration: none;
+        text-shadow: none;
+        float: none;
+        position: static;
+        width: auto;
+        height: auto;
+        white-space: nowrap;
+        cursor: inherit;
+        -webkit-tap-highlight-color: transparent;
+        line-height: normal;
+        font-weight: 400;
+        text-align: left;
+        box-sizing: content-box;
+        direction: ltr;
+    }
+
+    li div {
+        padding-top: 0px;
+    }
+
+    blockquote {
+        margin: 1rem 0px;
+    }
+
+    li .mathjax-block, li p {
+        margin: 0.5rem 0px;
+    }
+
+    li blockquote {
+        margin: 1rem 0px;
+    }
+
+    li {
+        margin: 0px;
+        position: relative;
+    }
+
+    blockquote > :last-child {
+        margin-bottom: 0px;
+    }
+
+    blockquote > :first-child, li > :first-child {
+        margin-top: 0px;
+    }
+
+    .footnotes-area {
+        color: rgb(136, 136, 136);
+        margin-top: 0.714rem;
+        padding-bottom: 0.143rem;
+        white-space: normal;
+    }
+
+    #write .footnote-line {
+        white-space: pre-wrap;
+    }
+
+    @media print {
+        body, html {
+            border: 1px solid transparent;
+            height: 99%;
+            break-after: avoid;
+            break-before: avoid;
+            font-variant-ligatures: no-common-ligatures;
+        }
+
+        #write {
+            margin-top: 0px;
+            padding-top: 0px;
+            border-color: transparent !important;
+            padding-bottom: 0px !important;
+        }
+
+        .typora-export * {
+            -webkit-print-color-adjust: exact;
+        }
+
+        .typora-export #write {
+            break-after: avoid;
+        }
+
+        .typora-export #write::after {
+            height: 0px;
+        }
+
+        .is-mac table {
+            break-inside: avoid;
+        }
+
+        .typora-export-show-outline .typora-export-sidebar {
+            display: none;
+        }
+    }
+
+    .footnote-line {
+        margin-top: 0.714em;
+        font-size: 0.7em;
+    }
+
+    a img, img a {
+        cursor: pointer;
+    }
+
+    pre.md-meta-block {
+        font-size: 0.8rem;
+        min-height: 0.8rem;
+        white-space: pre-wrap;
+        background: rgb(204, 204, 204);
+        display: block;
+        overflow-x: hidden;
+    }
+
+    p > .md-image:only-child:not(.md-img-error) img, p > img:only-child {
+        display: block;
+        margin: auto;
+    }
+
+    #write.first-line-indent p > .md-image:only-child:not(.md-img-error) img {
+        left: -2em;
+        position: relative;
+    }
+
+    p > .md-image:only-child {
+        display: inline-block;
+        width: 100%;
+    }
+
+    #write .MathJax_Display {
+        margin: 0.8em 0px 0px;
+    }
+
+    .md-math-block {
+        width: 100%;
+    }
+
+    .md-math-block:not(:empty)::after {
+        display: none;
+    }
+
+    .MathJax_ref {
+        fill: currentcolor;
+    }
+
+    [contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus {
+        outline: 0px;
+        box-shadow: none;
+    }
+
+    .md-task-list-item {
+        position: relative;
+        list-style-type: none;
+    }
+
+    .task-list-item.md-task-list-item {
+        padding-left: 0px;
+    }
+
+    .md-task-list-item > input {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        margin-left: -1.2em;
+        margin-top: calc(1em - 10px);
+        border: none;
+    }
+
+    .math {
+        font-size: 1rem;
+    }
+
+    .md-toc {
+        min-height: 3.58rem;
+        position: relative;
+        font-size: 0.9rem;
+        border-radius: 10px;
+    }
+
+    .md-toc-content {
+        position: relative;
+        margin-left: 0px;
+    }
+
+    .md-toc-content::after, .md-toc::after {
+        display: none;
+    }
+
+    .md-toc-item {
+        display: block;
+        color: rgb(65, 131, 196);
+    }
+
+    .md-toc-item a {
+        text-decoration: none;
+    }
+
+    .md-toc-inner:hover {
+        text-decoration: underline;
+    }
+
+    .md-toc-inner {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .md-toc-h1 .md-toc-inner {
+        margin-left: 0px;
+        font-weight: 700;
+    }
+
+    .md-toc-h2 .md-toc-inner {
+        margin-left: 2em;
+    }
+
+    .md-toc-h3 .md-toc-inner {
+        margin-left: 4em;
+    }
+
+    .md-toc-h4 .md-toc-inner {
+        margin-left: 6em;
+    }
+
+    .md-toc-h5 .md-toc-inner {
+        margin-left: 8em;
+    }
+
+    .md-toc-h6 .md-toc-inner {
+        margin-left: 10em;
+    }
+
+    @media screen and (max-width: 48em) {
+        .md-toc-h3 .md-toc-inner {
+            margin-left: 3.5em;
+        }
+
+        .md-toc-h4 .md-toc-inner {
+            margin-left: 5em;
+        }
+
+        .md-toc-h5 .md-toc-inner {
+            margin-left: 6.5em;
+        }
+
+        .md-toc-h6 .md-toc-inner {
+            margin-left: 8em;
+        }
+    }
+
+    a.md-toc-inner {
+        font-size: inherit;
+        font-style: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+    }
+
+    .footnote-line a:not(.reversefootnote) {
+        color: inherit;
+    }
+
+    .reversefootnote {
+        font-family: ui-monospace, sans-serif;
+    }
+
+    .md-attr {
+        display: none;
+    }
+
+    .md-fn-count::after {
+        content: ".";
+    }
+
+    code, pre, samp, tt {
+        font-family: var(--monospace);
+    }
+
+    kbd {
+        margin: 0px 0.1em;
+        padding: 0.1em 0.6em;
+        font-size: 0.8em;
+        color: rgb(36, 39, 41);
+        background: rgb(255, 255, 255);
+        border: 1px solid rgb(173, 179, 185);
+        border-radius: 3px;
+        box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset;
+        white-space: nowrap;
+        vertical-align: middle;
+    }
+
+    .md-comment {
+        color: rgb(162, 127, 3);
+        opacity: 0.6;
+        font-family: var(--monospace);
+    }
+
+    code {
+        text-align: left;
+        vertical-align: initial;
+    }
+
+    a.md-print-anchor {
+        white-space: pre !important;
+        border-width: initial !important;
+        border-style: none !important;
+        border-color: initial !important;
+        display: inline-block !important;
+        position: absolute !important;
+        width: 1px !important;
+        right: 0px !important;
+        outline: 0px !important;
+        background: 0px 0px !important;
+        text-decoration: initial !important;
+        text-shadow: initial !important;
+    }
+
+    .os-windows.monocolor-emoji .md-emoji {
+        font-family: "Segoe UI Symbol", sans-serif;
+    }
+
+    .md-diagram-panel > svg {
+        max-width: 100%;
+    }
+
+    [lang="flow"] svg, [lang="mermaid"] svg {
+        max-width: 100%;
+        height: auto;
+    }
+
+    [lang="mermaid"] .node text {
+        font-size: 1rem;
+    }
+
+    table tr th {
+        border-bottom: 0px;
+    }
+
+    video {
+        max-width: 100%;
+        display: block;
+        margin: 0px auto;
+    }
+
+    iframe {
+        max-width: 100%;
+        width: 100%;
+        border: none;
+    }
+
+    .highlight td, .highlight tr {
+        border: 0px;
+    }
+
+    mark {
+        background: rgb(255, 255, 0);
+        color: rgb(0, 0, 0);
+    }
+
+    .md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong {
+        color: inherit;
+    }
+
+    .md-expand mark .md-meta {
+        opacity: 0.3 !important;
+    }
+
+    mark .md-meta {
+        color: rgb(0, 0, 0);
+    }
+
+    @media print {
+        .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 {
+            break-inside: avoid;
+        }
+    }
+
+    .md-diagram-panel .messageText {
+        stroke: none !important;
+    }
+
+    .md-diagram-panel .start-state {
+        fill: var(--node-fill);
+    }
+
+    .md-diagram-panel .edgeLabel rect {
+        opacity: 1 !important;
+    }
+
+    .md-fences.md-fences-math {
+        font-size: 1em;
+    }
+
+    .md-fences-advanced:not(.md-focus) {
+        padding: 0px;
+        white-space: nowrap;
+        border: 0px;
+    }
+
+    .md-fences-advanced:not(.md-focus) {
+        background: inherit;
+    }
+
+    .typora-export-show-outline .typora-export-content {
+        max-width: 1440px;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .typora-export-sidebar {
+        width: 300px;
+        font-size: 0.8rem;
+        margin-top: 80px;
+        margin-right: 18px;
+    }
+
+    .typora-export-show-outline #write {
+        --webkit-flex: 2;
+        flex: 2 1 0%;
+    }
+
+    .typora-export-sidebar .outline-content {
+        position: fixed;
+        top: 0px;
+        max-height: 100%;
+        overflow: hidden auto;
+        padding-bottom: 30px;
+        padding-top: 60px;
+        width: 300px;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .typora-export-sidebar, .typora-export-sidebar .outline-content {
+            width: 240px;
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+        .typora-export-sidebar {
+            display: none;
+        }
+    }
+
+    .outline-content li, .outline-content ul {
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        list-style: none;
+    }
+
+    .outline-content ul {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .outline-content strong {
+        font-weight: 400;
+    }
+
+    .outline-expander {
+        width: 1rem;
+        height: 1.42857rem;
+        position: relative;
+        display: table-cell;
+        vertical-align: middle;
+        cursor: pointer;
+        padding-left: 4px;
+    }
+
+    .outline-expander::before {
+        content: "";
+        position: relative;
+        font-family: Ionicons;
+        display: inline-block;
+        font-size: 8px;
+        vertical-align: middle;
+    }
+
+    .outline-item {
+        padding-top: 3px;
+        padding-bottom: 3px;
+        cursor: pointer;
+    }
+
+    .outline-expander:hover::before {
+        content: "";
+    }
+
+    .outline-h1 > .outline-item {
+        padding-left: 0px;
+    }
+
+    .outline-h2 > .outline-item {
+        padding-left: 1em;
+    }
+
+    .outline-h3 > .outline-item {
+        padding-left: 2em;
+    }
+
+    .outline-h4 > .outline-item {
+        padding-left: 3em;
+    }
+
+    .outline-h5 > .outline-item {
+        padding-left: 4em;
+    }
+
+    .outline-h6 > .outline-item {
+        padding-left: 5em;
+    }
+
+    .outline-label {
+        cursor: pointer;
+        display: table-cell;
+        vertical-align: middle;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .outline-label:hover {
+        text-decoration: underline;
+    }
+
+    .outline-item:hover {
+        border-color: rgb(245, 245, 245);
+        background-color: var(--item-hover-bg-color);
+    }
+
+    .outline-item:hover {
+        margin-left: -28px;
+        margin-right: -28px;
+        border-left: 28px solid transparent;
+        border-right: 28px solid transparent;
+    }
+
+    .outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before {
+        display: none;
+    }
+
+    .outline-item-open > .outline-item > .outline-expander::before {
+        content: "";
+    }
+
+    .outline-children {
+        display: none;
+    }
+
+    .info-panel-tab-wrapper {
+        display: none;
+    }
+
+    .outline-item-open > .outline-children {
+        display: block;
+    }
+
+    .typora-export .outline-item {
+        padding-top: 1px;
+        padding-bottom: 1px;
+    }
+
+    .typora-export .outline-item:hover {
+        margin-right: -8px;
+        border-right: 8px solid transparent;
+    }
+
+    .typora-export .outline-expander::before {
+        content: "+";
+        font-family: inherit;
+        top: -1px;
+    }
+
+    .typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before {
+        content: "−";
+    }
+
+    .typora-export-collapse-outline .outline-children {
+        display: none;
+    }
+
+    .typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children {
+        display: block;
+    }
+
+    .typora-export-no-collapse-outline .outline-expander::before {
+        content: "" !important;
+    }
+
+    .typora-export-show-outline .outline-item-active > .outline-item .outline-label {
+        font-weight: 700;
+    }
+
+    .md-inline-math-container mjx-container {
+        zoom: 0.95;
+    }
+
+    mjx-container {
+        break-inside: avoid;
+    }
+
+
+    :root {
+        --side-bar-bg-color: #fafafa;
+        --control-text-color: #777;
+    }
+
+    @include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+    /* open-sans-regular - latin-ext_latin */
+    /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+    html {
+        font-size: 16px;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+        font-family: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+        color: rgb(51, 51, 51);
+        line-height: 1.6;
+    }
+
+    #write {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 30px;
+        padding-bottom: 100px;
+    }
+
+    @media only screen and (min-width: 1400px) {
+        #write {
+            max-width: 1024px;
+        }
+    }
+
+    @media only screen and (min-width: 1800px) {
+        #write {
+            max-width: 1200px;
+        }
+    }
+
+    #write > ul:first-child,
+    #write > ol:first-child {
+        margin-top: 30px;
+    }
+
+    a {
+        color: #4183C4;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        position: relative;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+        line-height: 1.4;
+        cursor: text;
+    }
+
+    h1:hover a.anchor,
+    h2:hover a.anchor,
+    h3:hover a.anchor,
+    h4:hover a.anchor,
+    h5:hover a.anchor,
+    h6:hover a.anchor {
+        text-decoration: none;
+    }
+
+    h1 tt,
+    h1 code {
+        font-size: inherit;
+    }
+
+    h2 tt,
+    h2 code {
+        font-size: inherit;
+    }
+
+    h3 tt,
+    h3 code {
+        font-size: inherit;
+    }
+
+    h4 tt,
+    h4 code {
+        font-size: inherit;
+    }
+
+    h5 tt,
+    h5 code {
+        font-size: inherit;
+    }
+
+    h6 tt,
+    h6 code {
+        font-size: inherit;
+    }
+
+    h1 {
+        font-size: 2.25em;
+        line-height: 1.2;
+        border-bottom: 1px solid #eee;
+    }
+
+    h2 {
+        font-size: 1.75em;
+        line-height: 1.225;
+        border-bottom: 1px solid #eee;
+    }
+
+    /*@media print {
+        .typora-export h1,
+        .typora-export h2 {
+            border-bottom: none;
+            padding-bottom: initial;
+        }
+
+        .typora-export h1::after,
+        .typora-export h2::after {
+            content: "";
+            display: block;
+            height: 100px;
+            margin-top: -96px;
+            border-top: 1px solid #eee;
+        }
+    }*/
+
+    h3 {
+        font-size: 1.5em;
+        line-height: 1.43;
+    }
+
+    h4 {
+        font-size: 1.25em;
+    }
+
+    h5 {
+        font-size: 1em;
+    }
+
+    h6 {
+        font-size: 1em;
+        color: #777;
+    }
+
+    p,
+    blockquote,
+    ul,
+    ol,
+    dl,
+    table {
+        margin: 0.8em 0;
+    }
+
+    li > ol,
+    li > ul {
+        margin: 0 0;
+    }
+
+    hr {
+        height: 2px;
+        padding: 0;
+        margin: 16px 0;
+        background-color: #e7e7e7;
+        border: 0 none;
+        overflow: hidden;
+        box-sizing: content-box;
+    }
+
+    li p.first {
+        display: inline-block;
+    }
+
+    ul,
+    ol {
+        padding-left: 30px;
+    }
+
+    ul:first-child,
+    ol:first-child {
+        margin-top: 0;
+    }
+
+    ul:last-child,
+    ol:last-child {
+        margin-bottom: 0;
+    }
+
+    blockquote {
+        border-left: 4px solid #dfe2e5;
+        padding: 0 15px;
+        color: #777777;
+    }
+
+    blockquote blockquote {
+        padding-right: 0;
+    }
+
+    table {
+        padding: 0;
+        word-break: initial;
+    }
+
+    table tr {
+        border: 1px solid #dfe2e5;
+        margin: 0;
+        padding: 0;
+    }
+
+    table tr:nth-child(2n),
+    thead {
+        background-color: #f8f8f8;
+    }
+
+    table th {
+        font-weight: bold;
+        border: 1px solid #dfe2e5;
+        border-bottom: 0;
+        margin: 0;
+        padding: 6px 13px;
+    }
+
+    table td {
+        border: 1px solid #dfe2e5;
+        margin: 0;
+        padding: 6px 13px;
+    }
+
+    table th:first-child,
+    table td:first-child {
+        margin-top: 0;
+    }
+
+    table th:last-child,
+    table td:last-child {
+        margin-bottom: 0;
+    }
+
+    .CodeMirror-lines {
+        padding-left: 4px;
+    }
+
+    .code-tooltip {
+        box-shadow: 0 1px 1px 0 rgba(0, 28, 36, .3);
+        border-top: 1px solid #eef2f2;
+    }
+
+    .md-fences,
+    code,
+    tt {
+        border: 1px solid #e7eaed;
+        background-color: #f8f8f8;
+        border-radius: 3px;
+        padding: 0;
+        padding: 2px 4px 0px 4px;
+        font-size: 0.9em;
+    }
+
+    code {
+        background-color: #f3f4f4;
+        padding: 0 2px 0 2px;
+    }
+
+    .md-fences {
+        margin-bottom: 15px;
+        margin-top: 15px;
+        padding-top: 8px;
+        padding-bottom: 6px;
+    }
+
+
+    .md-task-list-item > input {
+        margin-left: -1.3em;
+    }
+
+    @media print {
+        html {
+            font-size: 13px;
+        }
+
+        pre {
+            page-break-inside: avoid;
+            word-wrap: break-word;
+        }
+    }
+
+    .md-fences {
+        background-color: #f8f8f8;
+    }
+
+    #write pre.md-meta-block {
+        padding: 1rem;
+        font-size: 85%;
+        line-height: 1.45;
+        background-color: #f7f7f7;
+        border: 0;
+        border-radius: 3px;
+        color: #777777;
+        margin-top: 0 !important;
+    }
+
+    .mathjax-block > .code-tooltip {
+        bottom: .375rem;
+    }
+
+    .md-mathjax-midline {
+        background: #fafafa;
+    }
+
+    #write > h3.md-focus:before {
+        left: -1.5625rem;
+        top: .375rem;
+    }
+
+    #write > h4.md-focus:before {
+        left: -1.5625rem;
+        top: .285714286rem;
+    }
+
+    #write > h5.md-focus:before {
+        left: -1.5625rem;
+        top: .285714286rem;
+    }
+
+    #write > h6.md-focus:before {
+        left: -1.5625rem;
+        top: .285714286rem;
+    }
+
+    .md-image > .md-meta {
+        /*border: 1px solid #ddd;*/
+        border-radius: 3px;
+        padding: 2px 0px 0px 4px;
+        font-size: 0.9em;
+        color: inherit;
+    }
+
+    .md-tag {
+        color: #a7a7a7;
+        opacity: 1;
+    }
+
+    .md-toc {
+        margin-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .sidebar-tabs {
+        border-bottom: none;
+    }
+
+    #typora-quick-open {
+        border: 1px solid #ddd;
+        background-color: #f8f8f8;
+    }
+
+    #typora-quick-open-item {
+        background-color: #FAFAFA;
+        border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+        border-style: solid;
+        border-width: 1px;
+    }
+
+    /** focus mode */
+    .on-focus-mode blockquote {
+        border-left-color: rgba(85, 85, 85, 0.12);
+    }
+
+    header, .context-menu, .megamenu-content, footer {
+        font-family: "Segoe UI", "Arial", sans-serif;
+    }
+
+    .file-node-content:hover .file-node-icon,
+    .file-node-content:hover .file-node-open-state {
+        visibility: visible;
+    }
+
+    .mac-seamless-mode #typora-sidebar {
+        background-color: #fafafa;
+        background-color: var(--side-bar-bg-color);
+    }
+
+    .md-lang {
+        color: #b4654d;
+    }
+
+    /*.html-for-mac {
+        --item-hover-bg-color: #E6F0FE;
+    }*/
+
+    #md-notification .btn {
+        border: 0;
+    }
+
+    .dropdown-menu .divider {
+        border-color: #e5e5e5;
+        opacity: 0.4;
+    }
+
+    .ty-preferences .window-content {
+        background-color: #fafafa;
+    }
+
+    .ty-preferences .nav-group-item.active {
+        color: white;
+        background: #999;
+    }
+
+    .menu-item-container a.menu-style-btn {
+        background-color: #f5f8fa;
+        background-image: linear-gradient(180deg, hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0));
+    }
+
+
+    </style>
+    <title>2019 阅读单词</title>
+</head>
+<body class='typora-export os-windows'>
+<div class='typora-export-content'>
+    <div id='write' class=''>
+        <figure>
+            <table>
+                <thead>
+                <tr>
+                    <th style='text-align:left;'><span>en</span></th>
+                    <th style='text-align:left;'><span>cn</span></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td style='text-align:left;'><span>ability</span></td>
+                    <td style='text-align:left;'><span>能力</span><br><span>n. 能力，能够；才能，技能，本领</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>absorb</span></td>
+                    <td style='text-align:left;'><span>吸收</span><br><span>v. 吸收；使并入，纳入；同化，汲取；消减，缓冲（外力、震动等）；理解，掌握（信息）；使全神贯注，使专心；承受（变革、影响等），承担（费用等）；花掉（大量金钱），耗费</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>accustom</span></td>
+                    <td style='text-align:left;'><span>习惯</span><br><span>v. 使习惯于，使适应于</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>advantageous</span></td>
+                    <td style='text-align:left;'><span>有利的</span><br><span>adj. 有利的，有益的</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>alert</span></td>
+                    <td style='text-align:left;'>
+                        <span>警报</span><br><span>adj. 警惕的，警觉的；机敏的，敏捷的；意识到，注意到（alert to）</span><br><span>v. 向……报警，使警觉；提示，提醒（某人）</span><br><span>n. 警报，警示；警戒，警惕；（电子设备的）提示信号；警戒期</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>already</span></td>
+                    <td style='text-align:left;'>
+                        <span>已经</span><br><span>adv. 已经，早已；&lt;美，非正式&gt;马上，够了（用于表达不耐烦或气恼）</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>appease</span></td>
+                    <td style='text-align:left;'><span>安抚</span><br><span>vt. 平息，安抚；缓解</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>auction</span></td>
+                    <td style='text-align:left;'><span>拍卖</span><br><span>n. 拍卖；（桥牌）叫牌阶段</span><br><span>v. 拍卖</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>available</span></td>
+                    <td style='text-align:left;'><span>可用</span><br><span>adj. 可用的，可获得的；有空的，有闲暇的；未婚的，单身的</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>balance</span></td>
+                    <td style='text-align:left;'>
+                        <span>平衡</span><br><span>n. 平衡，均衡，均势；平衡能力；账户余额，结存；结欠，余款；天平，秤；（乐器）平衡器</span><br><span>v. 保持平衡；权衡，斟酌；使收支平衡；均衡，抵消</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>better</span></td>
+                    <td style='text-align:left;'><span>更好的</span><br><span>adj. 较好的，更好的；能力更强的，更熟练的；（健康状况）好转的，康复的；更合适的，更得体的</span><br><span>adv. 较好地，更好地；更，更大程度上；更妥，更恰当</span><br><span>n. 更好的事物，较好者；更好的表现，更好的待遇；&lt;旧&gt;上司，比自己能力强的人；打赌者（=bettor）</span><br><span>v. 超过，胜过；改善，改进</span><br><span>pron. 更大成就，更好待遇，更好行为</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>binary</span></td>
+                    <td style='text-align:left;'>
+                        <span>二进制</span><br><span>adj. 由两部分组成的，二重的；二进制的（用 0 和 1 记数）</span><br><span>n. 二进制，二进制记数法；由两部分组成的事物，一双，双体</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>brush</span></td>
+                    <td style='text-align:left;'><span>刷</span><br><span>n. 刷子，画笔；灌木丛；刷；轻擦，掠过；小冲突；狐狸尾巴；柴枝；&lt;非正式&gt;（性感的）女人（或女孩）</span><br><span>v. 刷，拂拭；刷掉，拂去；刷上；轻擦，触碰</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>burnable</span></td>
+                    <td style='text-align:left;'>
+                        <span>可燃</span><br><span>adj. 可燃的；灼伤的；易燃的</span><br><span>n. 可燃物；易燃物</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>capacity</span></td>
+                    <td style='text-align:left;'>
+                        <span>能力</span><br><span>n. 能力，才能；容积，容纳能力；职位，职责；功率，容积；生产量，生产能力</span><br><span>adj. 无虚席的，满场的</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>carbon dioxide</span></td>
+                    <td style='text-align:left;'><span>二氧化碳</span><br><span>二氧化碳：一种重的无色气体CO2，不支持燃烧，在水中溶解形成碳酸，主要形成于动物呼吸、动植物物质的腐烂或燃烧过程中，被植物在光合作用中从空气中吸收，并用于饮料的碳酸化。</span><br><span>· The carbon dioxide emissions from factories contribute to global warming.</span><br><span>工厂排放的二氧化碳导致全球变暖。</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>caregiver</span></td>
+                    <td style='text-align:left;'><span>照顾者</span><br><span>n. 照料者，护理者；看护者；看护者，护理员（同carer）</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>challenge</span></td>
+                    <td style='text-align:left;'><span>挑战</span><br><span>n. 挑战，难题；挑战书，比赛邀请；质疑，质询；喝停盘查</span><br><span>v. 挑战，向……下战书；质疑，拒绝接受；盘问，查问；考验</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>chocolate</span></td>
+                    <td style='text-align:left;'>
+                        <span>巧克力</span><br><span>n. 巧克力，朱古力；巧克力糖，夹心巧克力糖；巧克力饮料，一杯巧克力饮料；深褐色，巧克力色</span><br><span>adj. 巧克力的，巧克力味的</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>climate</span></td>
+                    <td style='text-align:left;'><span>气候</span><br><span>n. 气候；气候区；氛围，局势</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>coin</span></td>
+                    <td style='text-align:left;'><span>硬币</span><br><span>n. 硬币，金属货币；塔罗牌中的一种花色（coins）</span><br><span>v. 创造新词，首次使用；铸币，造币；&lt;英，非正式&gt;迅速而轻松地发财</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>compensate</span></td>
+                    <td style='text-align:left;'><span>补偿</span><br><span>v. 赔偿，偿付；弥补，补偿；抵消；酬报（某人）</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>conscience</span></td>
+                    <td style='text-align:left;'><span>良心</span><br><span>n. 良知，良心；内疚，愧疚</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>consume</span></td>
+                    <td style='text-align:left;'><span>消费</span><br><span>v. 消耗，消费；吃，喝；吞噬，烧毁；使……着迷，充满</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>cooperation</span></td>
+                    <td style='text-align:left;'><span>合作</span><br><span>n. 合作，协作；协助，配合</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>cooperative</span></td>
+                    <td style='text-align:left;'>
+                        <span>合作</span><br><span>adj. 合作的，协作的；乐于配合的；（企业或其他组织）合作性的</span><br><span>n. 合作性组织</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>count</span></td>
+                    <td style='text-align:left;'>
+                        <span>数</span><br><span>v. （按顺序）数数；计数，点数目；把……算入，包括；重要；被允许，被接受；看作，认为</span><br><span>n. 计算，总数；数数；量的计数；（被指控的）罪状，事项；论点，观点；伯爵；（纱线的）支数</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>deeply</span></td>
+                    <td style='text-align:left;'><span>深深</span><br><span>adv. 很，非常；深刻地，深沉地；至深处</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>deficiency</span></td>
+                    <td style='text-align:left;'><span>缺乏</span><br><span>n. 缺乏，不足；缺陷，瑕疵；赤字</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>deprivation</span></td>
+                    <td style='text-align:left;'><span>剥夺</span><br><span>n. 贫困，匮乏，剥夺；免职（尤指圣职）</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>destructive</span></td>
+                    <td style='text-align:left;'><span>具有破坏性的</span><br><span>adj. 破坏性的，毁灭性的</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>detail</span></td>
+                    <td style='text-align:left;'><span>细节</span><br><span>n. 细节，细微之处；详情，资料；（军队中的）任务，特遣队</span><br><span>v. 详细说明，详述；彻底清洗（汽车）；（尤指军队中）派遣，选派</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>different</span></td>
+                    <td style='text-align:left;'><span>不同的</span><br><span>adj. 不同的；分别的，各别的；与众不同的</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>drought</span></td>
+                    <td style='text-align:left;'><span>干旱</span><br><span>n. 长期缺乏，严重短缺；&lt;古&gt;口渴；干旱，旱灾</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>effort</span></td>
+                    <td style='text-align:left;'>
+                        <span>努力</span><br><span>n. 努力，艰难的尝试；力气，精力；有组织的活动；努力的结果，成就；努力的结果，成就</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>emerge</span></td>
+                    <td style='text-align:left;'><span>出现</span><br><span>v. 浮现，出现；显露，知悉；恢复过来，幸存下来；形成，兴起</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>emit</span></td>
+                    <td style='text-align:left;'><span>发出</span><br><span>v. 排放，散发（尤指气体、辐射物）；发出（声音或噪音）；发行，发表</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>encourage</span></td>
+                    <td style='text-align:left;'><span>鼓励</span><br><span>v. 鼓励，激励；鼓动，怂恿；刺激，促进</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>ensure</span></td>
+                    <td style='text-align:left;'><span>确保</span><br><span>v. 确保，保证；保护，使安全</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>equivalent</span></td>
+                    <td style='text-align:left;'><span>等效</span><br><span>adj. 等同的，等效的</span><br><span>n. 对等的人（或事物），对应的人（或事物）；当量（equivalent weight）</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>evolve</span></td>
+                    <td style='text-align:left;'><span>进化</span><br><span>v. 进化，演化；逐步发展，逐渐演变</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>example</span></td>
+                    <td style='text-align:left;'><span>例子</span><br><span>n. 例子，例证；榜样，楷模；典型，范例；例句，例题；警戒，受罚（以示警告）者</span><br><span>v. 得到说明，可加以举例说明</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>expect</span></td>
+                    <td style='text-align:left;'><span>预计</span><br><span>v. 期待；预计；要求，指望；认为；怀孕</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>experience</span></td>
+                    <td style='text-align:left;'><span>经验</span><br><span>n. 经历，往事；经验，阅历；传统</span><br><span>v. 经历，遭遇；体会到，感受到</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>fear</span></td>
+                    <td style='text-align:left;'><span>恐惧</span><br><span>v. 害怕，畏惧；担心，忧虑；敬畏</span><br><span>n. 恐惧；担心；（坏事发生的）可能性；敬畏</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>fight</span></td>
+                    <td style='text-align:left;'><span>战斗</span><br><span>v. 与……作斗争，坚决反对；努力争取，为……而斗争；打仗，作战；打架；争吵，争论；参加拳击赛；打官司，进行（诉讼，辩护等）；努力抑制（情感）</span><br><span>n. 斗争；打斗，打架；争吵，争论；拳击比赛；战斗；斗志</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>figure</span></td>
+                    <td style='text-align:left;'><span>数字</span><br><span>n. 数字，数目，数值；数字符号，位数；身材，体型；（远处的）人影；（重要的）人物；（绘画或模型中）人像；（书中的）图、表；（数学）图形；价格，金额</span><br><span>v. （以重要地位）出现；&lt;美，非正式&gt;认为，估计；理解，弄懂；计算；用图画（或图形等）描绘，想象</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>finalize</span></td>
+                    <td style='text-align:left;'><span>完成</span><br><span>v. 最后决定，敲定；结束谈判，完成协议（或安排）</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>finance</span></td>
+                    <td style='text-align:left;'><span>金融</span><br><span>n. 财政，金融；资金，财源；财务事务，经济情况</span><br><span>v. 提供资金；贷款购买，赊购</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>flourish</span></td>
+                    <td style='text-align:left;'><span>蓬勃发展</span><br><span>v. 繁荣，昌盛；挥动；（植物或动物）长势好，茁壮成长</span><br><span>n. 夸张动作；（讲话或文章的）华丽辞藻，修饰；花彩号声；（手写花体字的）花饰</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>focus</span></td>
+                    <td style='text-align:left;'><span>焦点</span><br><span>n. 重点，中心点；关注，注意；震源；目的，意图；焦距；病灶；调焦装置；目的明确，专注；（椭圆、抛物线等曲线的）焦点</span><br><span>v. 集中，关注；聚焦，调焦；&lt;语言学&gt;以（句子的一部分）为焦点（或重心）</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>forest</span></td>
+                    <td style='text-align:left;'><span>森林</span><br><span>n. 森林，林区；（森林似的）一丛，一片；御猎场</span><br><span>v. 被森林覆盖，植林于</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>fuel</span></td>
+                    <td style='text-align:left;'><span>燃料</span><br><span>n. 燃料，燃烧剂；刺激因素，刺激性言行；（为身体提供能量的）食物，饮料，药剂</span><br><span>v. （给……）提供燃料，加油；刺激，加剧</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>future</span></td>
+                    <td style='text-align:left;'><span>未来</span><br><span>n. 未来，将来；前途，前景；期货；（动词的）将来时态</span><br><span>adj. 将来的，未来的；（动词）将来时态的</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>generally</span></td>
+                    <td style='text-align:left;'><span>一般</span><br><span>adv. 笼统地，大概；通常，普遍地</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>government</span></td>
+                    <td style='text-align:left;'><span>政府</span><br><span>n. 政府，内阁；政体，国家体制；（国家等的）治理，管理；政府掌控经济和社会活动的程度；（语法）支配关系</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>great</span></td>
+                    <td style='text-align:left;'><span>伟大的</span><br><span>adj. 伟大的，著名的；大型的，巨大的；（数量或程度）极大的，很大的；美妙的；身心健康的，精力充沛的；重要的，重大的；热心的，热衷的；和蔼的，随和的；（外）曾祖（或曾孙）的；&lt;爱尔兰&gt;（二人）亲近的，亲密的；擅长……的</span><br><span>adv. 很好地，很棒地</span><br><span>n. 伟人，伟大的事物；金曲</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>grow</span></td>
+                    <td style='text-align:left;'>
+                        <span>成长</span><br><span>v. 长大，成长；成活，生长；发展，增加；逐渐变得；产生，形成；栽种，种植；留长，蓄；变长</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>guilt</span></td>
+                    <td style='text-align:left;'><span>内疚</span><br><span>n. 内疚；罪行；罪责</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>hard</span></td>
+                    <td style='text-align:left;'><span>硬</span><br><span>adj. 硬的，坚固的；困难的；猛烈的，用力的；困苦的，艰苦的；努力的；冷酷的，心肠硬的；严厉的，苛刻的；（政党内部派别）极端的，固执己见的；（季节，天气）严酷的，凛冽的；（水）硬的；坚强的，勇敢的；刺目的，令人不快的；确凿的，可靠的；（学科）实证的；硬（科幻）的；酒精含量高的，烈性的；（尤指葡萄酒因含有单宁酸而）苦涩的；（毒品）毒性强的，易上瘾的；（辐射）穿透力强的；（色情作品）淫秽的，极黄色的；仔细的，认真的；严肃的；强壮的；发硬音的；（股票价格，商品价格）稳健的</span><br><span>adv. 努力地，费力地；用力地，猛烈地；仔细地，认真地；沉重地，大量地；变硬；在最大程度上</span><br><span>n. &lt;英&gt;海滩路</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>harmful</span></td>
+                    <td style='text-align:left;'><span>有害的</span><br><span>adj. 有害的，造成伤害的</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>hasten</span></td>
+                    <td style='text-align:left;'><span>加速</span><br><span>v. 促进，使加快；急忙进行，赶紧说（或做）；赶往（某地）</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>imagination</span></td>
+                    <td style='text-align:left;'><span>想象力</span><br><span>n. 想像力，想像；幻觉，空想，幻想物；兴趣；创造力，创作力</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>impulse</span></td>
+                    <td style='text-align:left;'>
+                        <span>冲动</span><br><span>n. 冲动；脉冲；推动力</span><br><span>adj. 一时兴起的，随兴的</span><br><span>v. 推动</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>in conjunction with</span></td>
+                    <td style='text-align:left;'><span>在与</span><br><span>与……一起，结合使用</span><br><span>· The new product is designed to be used in conjunction with our existing line.</span><br><span>这款新产品是为了与我们现有的产品线结合使用而设计的。</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>incline</span></td>
+                    <td style='text-align:left;'><span>斜坡</span><br><span>v. （使）倾向于；点头；（使）倾斜；赞同（某人，某事）</span><br><span>n. 斜坡，倾斜</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>increasingly</span></td>
+                    <td style='text-align:left;'><span>越来越多地</span><br><span>adv. 越来越多地，不断增加地</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>inequality</span></td>
+                    <td style='text-align:left;'>
+                        <span>不平等</span><br><span>n. （大小、程度、情况等的）不同，不平等；（数学）（两式间的）不等；（数学）不等式</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>insect</span></td>
+                    <td style='text-align:left;'><span>昆虫</span><br><span>n. 昆虫；类似昆虫的小动物（如蜘蛛）；卑鄙的人</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>involve</span></td>
+                    <td style='text-align:left;'><span>涉及</span><br><span>v. 牵涉，涉及；包含，需要；使陷入，使卷入；（使）参加，加入；使承担，使面对</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>jealousy</span></td>
+                    <td style='text-align:left;'><span>嫉妒</span><br><span>n. 嫉妒，羡慕；吃醋，醋意</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>landscape</span></td>
+                    <td style='text-align:left;'>
+                        <span>景观</span><br><span>n. （陆上，尤指乡村的）风景，景色；形势，情形；（陆上或乡村）风景画；横向打印格式</span><br><span>v. 对……做景观美化，美化……的环境；从事景观美化工作</span><br><span>adj. 横向列印的</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>later</span></td>
+                    <td style='text-align:left;'>
+                        <span>晚些时候</span><br><span>adv. 后来，随后；&lt;美，非正式&gt;再见，回头见</span><br><span>adj. 较晚的，以后的；较新式的，较现代的；晚期的，末期的</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>learn</span></td>
+                    <td style='text-align:left;'><span>学习</span><br><span>v. 学习，学会；得知，获悉；背熟，熟记；认识到，（从……）吸取教训；&lt;旧&gt;教导（某人）</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>magic</span></td>
+                    <td style='text-align:left;'>
+                        <span>魔法</span><br><span>n. 魔法，法术；魔术，戏法；魅力，魔力；杰出技能，罕见才能</span><br><span>adj. 魔术的，戏法的；魔法的，魔力的；神奇的，有奇效的；非常好的，令人十分愉快的；重要的，关键的</span><br><span>v. （像）用魔法变出（或使消失、使变成……等）</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>manage</span></td>
+                    <td style='text-align:left;'><span>管理</span><br><span>v. 管理，处理；操纵，控制；设法做到，勉力完成；腾出时间参加；凑合着活下去，支撑；调教（人或动物）；竟搞得，竟做出</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>material</span></td>
+                    <td style='text-align:left;'>
+                        <span>材料</span><br><span>n. 衣料，布料；材料，原料；素材；节目，剧目；（有指明特征的）人才；（某一活动所需的）材料</span><br><span>adj. 物质的，非精神上的；重要的，需予以考虑的；和推理内容有关的</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>moisture</span></td>
+                    <td style='text-align:left;'><span>水分</span><br><span>n. 潮气，水分</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>moral</span></td>
+                    <td style='text-align:left;'>
+                        <span>道德</span><br><span>adj. 有关道德的；基于道德的，道义上的；品行端正的，有道德的；伦理的；能辨别是非的</span><br><span>n. 道德准则（标准）；寓意，道德上的教训</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>nasty</span></td>
+                    <td style='text-align:left;'><span>令人讨厌的</span><br><span>adj. 恶毒的，凶相的；令人不快的，令人厌恶的；（伤口、疾病等）严重的，恶性的；污秽的，下流的；（外表）丑陋的，（气味等）难闻的；造成很大伤害的；令人担忧的，难对付的；有威胁性的，吓人的</span><br><span>n. &lt;非正式&gt;令人不快的人（或事），危害别人的人（或事）；&lt;非正式&gt;恐怖录像（或影片）</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>norm</span></td>
+                    <td style='text-align:left;'><span>规范</span><br><span>n. 社会准则，行为规范；标准，平均水平；常态，平常事物；模方；&lt;澳，非正式&gt;诺姆（指整日呆在家中看电视的懒人，尤指看体育节目）</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>observation</span></td>
+                    <td style='text-align:left;'>
+                        <span>观察</span><br><span>n. 观察，监视；观察力；观察资料，观察结果；言论，评论；遵守，奉行；测天</span><br><span>adj. 用于观察的</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>opportunity</span></td>
+                    <td style='text-align:left;'><span>机会</span><br><span>n. 时机，机会</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>prioritize</span></td>
+                    <td style='text-align:left;'><span>优先考虑</span><br><span>v. 按优先顺序列出；优先考虑（处理）</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>produce</span></td>
+                    <td style='text-align:left;'><span>生产</span><br><span>v. 引起，造成；（自然地）生产，产生；（尤指用机器）生产，制造；（运用技巧）制作，造出；（某地、某过程或制度）出产，产出；出示，拿出；监制，制作（电影或戏剧）；生育；&lt;旧&gt;使（线段）延长</span><br><span>n. 农产品；（尤指某人工作或努力的）成果，结果</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>professor</span></td>
+                    <td style='text-align:left;'><span>教授</span><br><span>n. 教授；&lt;美&gt;（大学的）讲师，教员；信仰表示者，宣称信仰者</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>prompt</span></td>
+                    <td style='text-align:left;'><span>提示</span><br><span>v. 促使，导致；鼓励，提示（说话者）；（计算机上）提示；（给演员）提词，提白</span><br><span>adj. 迅速的，立刻的；（人）利索的，敏捷的；及时的，准时的；（商品）即期要送的，即期要付的</span><br><span>n. （给演员的）提词；（计算机屏幕上显示准备接受指令的）提示； 鼓励，催促；（付款通知单上的）付款期限</span><br><span>adv. 准时地</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>propose</span></td>
+                    <td style='text-align:left;'><span>提出</span><br><span>v. 提议，建议；提出（理论或解释）；提名，推荐；计划，打算；求婚；（向立法机构或委员会）提交（动议）；提议祝（酒）</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>psychology</span></td>
+                    <td style='text-align:left;'><span>心理学</span><br><span>n. 心理学；心理特点，心理状态；心理影响；心计，善解人意</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>quiet</span></td>
+                    <td style='text-align:left;'><span>安静的</span><br><span>adj. 轻声的，安静的；不出声的；沉默寡言的，文静的；寂静的，平静的；不受打扰的，悠然的；（感情）不外露的，不张扬的；秘密的，私下的；（颜色、服饰）素净的，朴素大方的；清淡的</span><br><span>n. 安静，静谧</span><br><span>v. &lt;美&gt;（使）平静，安静；&lt;美&gt;消除，减轻（恐惧），平息（抱怨）</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>rate</span></td>
+                    <td style='text-align:left;'><span>率</span><br><span>n. 速度，速率；比率，率；费用，价格；费率；（英国）地方税，房地产税（rates）；&lt;罕&gt;等级</span><br><span>v. 评价，评定；被认为，被列为；&lt;英，非正式&gt; 看好； 对（影片、视频游戏等）分级；划分等级，分等；值得，应得；&lt;英&gt;给（财产）核定应缴地方税款；（机器、发动机等的）额定功率（极限）为；&lt;美，非正式&gt;受器重，受青睐（rate with）</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>rather</span></td>
+                    <td style='text-align:left;'><span>而</span><br><span>adv. 颇，相当；宁愿，最好（would rather）；而不是；更确切地说；（用以使表达的语气婉转）有几分，有点儿；恰恰相反，而是</span><br><span>int. &lt;英，旧&gt;当然，的确（表同意）</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>recently</span></td>
+                    <td style='text-align:left;'><span>最近</span><br><span>adv. 最近，不久前</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>recognition</span></td>
+                    <td style='text-align:left;'><span>识别</span><br><span>n. 承认，接受；表彰，赞誉；认出，识别；（政府对他国的）外交认可</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>recreation</span></td>
+                    <td style='text-align:left;'><span>娱乐</span><br><span>n. 娱乐（活动），消遣（活动）；重现，重建</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>reduce</span></td>
+                    <td style='text-align:left;'><span>减少</span><br><span>v. 减少，降低；（烹调中）使变浓稠，收汁；&lt;美&gt;节食减肥；使沦为，使陷入（不好的境地）；迫使，使不得不（做）；（通过破裂、燃烧等）使变成，使化为；归纳，简化；将分数约到（最小项）；（使）进行还原反应；减薄（底片或图片）；（语音）弱化；使（脱臼，断骨）复位；&lt;古&gt;攻克，征服（尤指围攻并占领城镇或要塞）</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>regard</span></td>
+                    <td style='text-align:left;'><span>把</span><br><span>v. 认为，把……看作；&lt;正式&gt;（尤指以某种方式）注视，凝视；&lt;古&gt;注意，留心；&lt;古&gt;与……有关，涉及</span><br><span>n. &lt;正式&gt; 尊重，敬佩；&lt;正式&gt; 关心，关注；注视，凝视；（用于信函结尾或转达问候）致意，问候（regards）</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>regret</span></td>
+                    <td style='text-align:left;'><span>后悔</span><br><span>v. 懊悔，惋惜；（用于正式书面语）对......感到抱歉，对......感到遗憾；&lt;古&gt;对（损失或缺乏）感到痛惜</span><br><span>n. 遗憾，惋惜；（因无法出席会议、聚会等的）致歉语</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>rein</span></td>
+                    <td style='text-align:left;'><span>控制</span><br><span>n. 缰绳；（成人牵引幼儿用的）安全绳套；控制，主宰</span><br><span>v. 用缰绳勒（马）使停步或放慢步子，勒（马）；控制住，约束</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>relationship</span></td>
+                    <td style='text-align:left;'><span>的关系</span><br><span>n. （人、团体、国家等相互间的）关系；（人或事物之间的）关联，关系；恋人关系，性爱关系；血缘关系，姻亲关系</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>remain</span></td>
+                    <td style='text-align:left;'>
+                        <span>保持</span><br><span>v. 逗留，留下；剩余，遗留；保持不变，一直是；仍需去做（或处理）</span><br><span>n. 剩余（物），遗迹；遗体，残骸</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>represent</span></td>
+                    <td style='text-align:left;'><span>代表</span><br><span>v. 代表；为……代言（辩护）；代表（选区、政党、群体）任国会议员（或其他立法机构议员）；代表（国家、学校、城镇等参加比赛）；作为某人的代表（尤指在正式场合或仪式中）；等于，相当于；（符号或象征）代表，表示；象征，体现；展示，描绘；（尤指不真实地）描述，描写；扮演；&lt;正式&gt;明确讲述，清楚说明；声称；正式提出（意见、抗议等）</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>require</span></td>
+                    <td style='text-align:left;'><span>需要</span><br><span>v. 需要；要求做（某事），规定</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>research</span></td>
+                    <td style='text-align:left;'>
+                        <span>研究</span><br><span>n. （尤指大学或科研机构进行的）研究，探讨；研究工作，调查工作</span><br><span>v. 研究，探索；为……收集资料，调查</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>researcher</span></td>
+                    <td style='text-align:left;'><span>研究员</span><br><span>n.  研究人员</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>restore</span></td>
+                    <td style='text-align:left;'>
+                        <span>恢复</span><br><span>v. 恢复（某种情况或感受）；使复原，使复位；修复，整修；重新采用，恢复使用；归还</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>revival</span></td>
+                    <td style='text-align:left;'><span>复兴</span><br><span>n. 复兴，复苏；再流行；（旧剧的）重新上演；（复兴基督教信仰的）奋兴布道会；（体力或活力的）重振</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>right amount</span></td>
+                    <td style='text-align:left;'><span>适量</span><br><span>适量：恰当的数量或程度，足够满足特定需求或目的。</span><br><span>· Add the right amount of salt to the recipe.</span><br><span>在食谱中加入适量的盐。</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>risk</span></td>
+                    <td style='text-align:left;'><span>风险</span><br><span>n. 危险，风险；危险的人（或事物），隐患；（按风险大小评估的）被保险对象，受贷者；（保险业承保的）险；金融风险</span><br><span>v. 使遭受（失去、毁坏或伤害的）危险；冒......的危险，担......的风险；冒险做，（明知结果而）大胆做</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>sadness</span></td>
+                    <td style='text-align:left;'><span>悲伤</span><br><span>n. 悲伤，悲痛；使人悲伤的事（或难过）的事</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>shade</span></td>
+                    <td style='text-align:left;'><span>阴影</span><br><span>n. 背阴处，阴凉处；（图画中的）暗处；遮光物，灯罩；&lt;美&gt;（能上下卷叠的）窗帘，百叶窗；&lt;非正式&gt;太阳镜，墨镜（shades）；（色彩的）浓淡深浅，色度；差别，不同；略微，少量（a shade）；让人想起……的事物（shades of）；次要地位，不显眼；&lt;文&gt;鬼，幽灵；地狱，冥府（the Shades）；&lt;史&gt;剪影</span><br><span>v. 为……遮阳（挡光），遮蔽（光线）；（用铅笔或加色）描黑，描影；使阴暗，使阴郁；（色彩）渐变；&lt;非正式&gt;（比赛）稍胜一筹，略占优势；（数量、速度或价格）略降；&lt;美&gt;细微改动以掩盖事实</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>share</span></td>
+                    <td style='text-align:left;'><span>分享</span><br><span>v. 共享，合用；分享；分配；分担（责任），分摊（费用）；共同拥有（看法、特质或经历）；倾诉，吐露</span><br><span>n. 股份，股票；（共有财产的）部分所有权；责任，贡献；份额；（某物的）一个合理（或正常）的量</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>shortfall</span></td>
+                    <td style='text-align:left;'><span>缺口</span><br><span>n. 差额；缺少</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>since</span></td>
+                    <td style='text-align:left;'>
+                        <span>自</span><br><span>prep. 自……以后，自……以来；（表示气愤）何曾，什么时候</span><br><span>conj. 在……以后，自……以来；因为，由于，既然</span><br><span>adv. 自……以后，自……以来；此后，后来</span><br><span>n. （Since）（法、美）新斯（人名）</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>so-called</span></td>
+                    <td style='text-align:left;'><span>所谓的</span><br><span>adj. （表示不认同）所谓的；叫做……的，号称……的</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>soak</span></td>
+                    <td style='text-align:left;'><span>浸泡</span><br><span>v. 浸泡；使湿透，浸湿；（液体）渗入，渗透；（在浴缸里）长时间泡浴；&lt;非正式&gt;向……敲竹杠（征重税）；吸收，吸入；沉浸在（学习中）</span><br><span>n. 浸泡，浸透；（长时间的）泡浴，洗澡；&lt;非正式&gt;酒鬼；&lt;澳新&gt;积水洼地，水洼；&lt;英，非正式&gt;大雨</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>social</span></td>
+                    <td style='text-align:left;'>
+                        <span>社会</span><br><span>adj. 社会的；社会地位的，社会阶层的；社交的，交际的；好交际的，合群的；群居的</span><br><span>n. 社交聚会，联欢会；&lt;英&gt;社会保障（the social）</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>species</span></td>
+                    <td style='text-align:left;'><span>物种</span><br><span>n. （动植物的）种，物种；种类；（具有相同特征的）一类人；（化学，物理）核素；（圣餐中用的）面包和圣酒</span><br><span>adj. 原种的</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>statement</span></td>
+                    <td style='text-align:left;'><span>声明</span><br><span>n. 声明，报告；说明，说法，表态；结算单，报表；（某观点的） 表达；（嫌犯或证人向警方提供的） 陈述，证词；（文字）陈述，表述；评估报告（英国地方教育主管部门针对儿童的特殊需要而提出意见）；（乐）（作品主题或旋律的）呈现；（计算机程序中的）语句</span><br><span>vt. 对儿童进行特殊教育评估认定</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>strategy</span></td>
+                    <td style='text-align:left;'><span>策略</span><br><span>n. （尤指为获得某物制定长期的）策略，行动计划；战略，战略学</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>strike</span></td>
+                    <td style='text-align:left;'><span>罢工</span><br><span>v. 打，撞；（用手或武器等）打；（使）碰撞；罢工；突然想到，突然意识到；突然袭击；（疾病、灾难等）侵袭；（闪电）击中；引起（强烈感情）；（时钟）敲响；达成（协议，妥协），达到（平衡）；发现（黄金，矿物，石油）；铸造（硬币、奖牌）；删除；踢球，击球；攻球得分；使处于特定状态；让（某人）觉得；摆出（姿态）；照在……上；把……迷住；弹奏，奏出；划（火柴）, 击出（火星）；直击（要害），与…...起（原则性）冲突；（在争斗、竞争等中）取得先机；触发（电弧）；（电影摄影术）复制；（金融用语）结算，算出；&lt;加&gt;组成（委员会）；拆除（帐篷，戏剧布景）；降（帆，旗）（以示敬意或投降）；把（枝）插进土里生根；（植物，扦插）生根；（小牡蛎）附着；（渔）急拉钓线把鱼钩住；行进；来到；闯出（或开辟）新的（或独立的）事业</span><br><span>n. 罢工，罢市，罢课；（军事）打击；击，踢；（石油等宝贵资源的）发现；（投出的）好球；（棒球中的）击空；（十柱保龄球）一投全倒；不利因素；拒绝，抗拒；（渔）（对已上钩的鱼）急拉钓线；（地层、断层等地质特征的）走向</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>substitute</span></td>
+                    <td style='text-align:left;'><span>替代</span><br><span>n. 替代品，代替物；（体育比赛中的）替补队员；令人满意的替代物，与之媲美的事物；&lt;苏格兰，法律&gt;副职</span><br><span>v. 用……代替；（比赛中）替换（运动员）；代替（某人的工作）；（化）取代（分子中的一个或一组原子，尤指氢原子）</span><br><span>adj. 替代性的</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>such</span></td>
+                    <td style='text-align:left;'>
+                        <span>这样的</span><br><span>det. 如此的，这等的；如此（……以致）；这种的，那样的</span><br><span>pron. 这种人（或事物），这类的；（上文提到的）那样的情况，那件事</span><br><span>adv. 这么，如此（用于加强叙述语气）；如此程度</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>suggest</span></td>
+                    <td style='text-align:left;'><span>建议</span><br><span>v. 提议，建议；推荐，举荐；显示，表明；暗示，暗指；使人想到，使人联想到</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>sympathy</span></td>
+                    <td style='text-align:left;'><span>同情</span><br><span>n. 同情（心），理解；赞同，支持；（与某人的）同感，共鸣；和应</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>temporarily</span></td>
+                    <td style='text-align:left;'><span>暂时</span><br><span>adv. 暂时地，临时地</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>tendency</span></td>
+                    <td style='text-align:left;'><span>趋势</span><br><span>n. 经常性行为，偏好；趋势，趋向；（性格中不良的）倾向；（政党内的）极端派别</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>threaten</span></td>
+                    <td style='text-align:left;'><span>威胁</span><br><span>v. 威胁，恐吓；危及，对……构成威胁；预示凶兆，有……危险</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>together</span></td>
+                    <td style='text-align:left;'><span>在一起</span><br><span>adv. 在一起，共同；以使接触（或相结合），到一起；（位置）在一起，紧挨地；关系密切，有婚姻关系；同时，一齐；（团结）在一起，合作地；合计地，总和地；不间断地，接连地；靠着，贴着</span><br><span>adj. &lt;非正式&gt;自信而有条理的，沉稳的；（两人）结婚的，有性关系（或恋爱关系）的</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>transgression</span></td>
+                    <td style='text-align:left;'><span>过犯</span><br><span>n. [地质] 海侵；犯罪；违反；逸出</span></td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>transportation</span></td>
+                    <td style='text-align:left;'><span>运输</span><br><span>n. 运输，运送；交通运输系统；运输工具，交通方式；（犯人的）流放，放逐</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>uncomfortable</span></td>
+                    <td style='text-align:left;'><span>不舒服</span><br><span>adj. 身体不适的，感到不舒服的；令人不舒服的；不自在的，不安的；使人不自在的，使人不安的；（处境、事实等）令人不快的，棘手的</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>understand</span></td>
+                    <td style='text-align:left;'><span>理解</span><br><span>v. 理解，懂得；了解，明白（某事物）；谅解，体谅；得知，听说；默认，默许；领会，推断出；解释</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>urgent</span></td>
+                    <td style='text-align:left;'><span>紧急的</span><br><span>adj. 紧急的，急迫的；急切的，催促的；&lt;正式&gt;（尤指某人的行动）执着的，坚定的</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>valuable</span></td>
+                    <td style='text-align:left;'><span>有价值的</span><br><span>adj. 值钱的，贵重的；有益的，宝贵的；重要的，珍贵的；可估价的</span><br><span>n. 贵重品</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>vice versa</span></td>
+                    <td style='text-align:left;'><span>反之亦然</span><br><span>反之亦然：顺序颠倒，关系相反。</span><br><span>· She loves him and vice versa.</span><br><span>她爱他，反之亦然。</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>weight</span></td>
+                    <td style='text-align:left;'><span>重量</span><br><span>n. 重量，分量，体重；重；杠铃，哑铃；砝码，秤砣，秤锤；（用于固定某物或用作机器部件的）重体，重物；重量单位，衡量制；重担，负担；影响力，重要性；（尤指举起或运载的）重物；大量的某物；（机械中用于推动或平衡的）平衡块；投掷器械（包括铁饼、铅球、链球等）；（布料）表面密度；重心；（引力场作用于物体上的）重力；权，权重，权数</span><br><span>v. 加重量于，使变重；（经改动）使倾向于……；视……为重要（或有价值），重视；权衡……的价值，加权重于；加重压于（马）上；对（织物）作加重处理（使织物感觉更厚更重）</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='text-align:left;'><span>wildlife</span></td>
+                    <td style='text-align:left;'><span>野生动物</span><br><span>n. 野生动植物</span><br><span>adj. 野生动植物的</span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </figure>
+    </div>
+</div>
+</body>
+</html>
