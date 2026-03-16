@@ -6,7 +6,6 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>首页 - 一个很长的首页 - 以便于你在收藏夹点到它</title>
     <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <script src="/js/bootstrap.bundle.min.js" type="text/javascript"></script>
     <link href="/tab/index.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -15,7 +14,7 @@
     <div class="row g-4">
         <!-- 左侧导航 -->
         <div class="col-lg-3 col-xl-2">
-            <div class="sidebar sticky-top pt-4" style="top: 20px;">
+            <div class="sidebar sticky-lg-top pt-4" id="sidebar">
                 <div class="nav-list" id="title"></div>
             </div>
         </div>
@@ -26,6 +25,7 @@
         </div>
     </div>
 </div>
+<script src="/js/bootstrap.bundle.min.js" type="text/javascript"></script>
 <script src="/tab/data.js" type="text/javascript"></script>
 <script>
     // 设置 favicon
@@ -64,7 +64,7 @@
             img.className = 'link-img';
             img.src = ico;
             img.onerror = function () {
-                this.src = "../img/link.png";
+                this.src = "/img/link.png";
             };
 
             const text = document.createElement('p');

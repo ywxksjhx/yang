@@ -2,7 +2,7 @@
 :root {
     --primary-color: #4f46e5;
     --primary-hover: #4338ca;
-    --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --bg-gradient: linear-gradient(135deg, #66a6ff 0%, #89f7fe 100%);
     --sidebar-bg: rgba(255, 255, 255, 0.15);
     --card-bg: rgba(255, 255, 255, 0.75);
     --text-primary: #1f2937;
@@ -34,6 +34,15 @@ body {
     padding: 16px;
     box-shadow: var(--shadow-lg);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+}
+
+@media (min-width: 992px) {
+    .sidebar {
+        position: sticky;
+        top: 1rem;
+    }
 }
 
 .nav-list {
@@ -132,7 +141,7 @@ body {
 
 .link-text {
     color: var(--text-primary);
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
     text-align: center;
     margin: 0;
@@ -144,13 +153,20 @@ body {
 /* ===== 响应式优化 ===== */
 @media (max-width: 991px) {
     .sidebar {
-        position: relative !important;
-        top: 0 !important;
+        position: static !important;
         margin-bottom: 24px;
+        max-height: none;
+        overflow-y: visible;
     }
 
     .sidebar-title {
         font-size: 16px;
+    }
+
+    /* 移动端导航按钮 */
+    .mobile-nav-toggle {
+        display: block;
+        margin-bottom: 16px;
     }
 }
 
@@ -189,5 +205,10 @@ body {
 
     .link-text {
         font-size: 12px;
+    }
+
+    /* 移动端隐藏滚动条 */
+    .sidebar::-webkit-scrollbar {
+        display: none;
     }
 }
