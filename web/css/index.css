@@ -1,107 +1,193 @@
+/* ===== 简洁主题配色 ===== */
+:root {
+    --primary-color: #4f46e5;
+    --primary-hover: #4338ca;
+    --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --sidebar-bg: rgba(255, 255, 255, 0.15);
+    --card-bg: rgba(255, 255, 255, 0.75);
+    --text-primary: #1f2937;
+    --text-secondary: #646b78;
+    --border-color: #e5e7eb;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background: #00cdaf;
-    user-select: none;
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text-primary);
 }
 
-#title {
-    position: absolute;
-    width: 20%;
-    left: 0;
-    top: 10%;
+/* ===== 侧边栏样式 ===== */
+.sidebar {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.a-title {
-    background-color: rgba(0, 0, 0, 0.1);
-    position: relative;
-    float: left;
-    width: 100%;
-    height: 52px;
-    border-top: 2px solid rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.nav-item {
+    display: block;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
     cursor: pointer;
-    transition: all .2s ease;
-    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2);
-}
-
-.title-p {
-    /* 文本定位 */
-    position: absolute;
-    width: 200px;
-    left: 50%;
-    top: 50%;
-    margin-left: -100px;
-    margin-top: -13px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     text-align: left;
-    color: rgba(0, 0, 0, 0.9);
-    font-size: 22px;
-    font-weight: bold;
 }
 
-.a-title:hover {
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2),
-    0px 0px 0px rgba(255, 255, 255, 0.4),
-    6px 6px 10px rgba(0, 0, 0, 0.2) inset,
-    -6px -6px 10px rgba(255, 255, 255, 0.4) inset;
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    transform: translateX(4px);
 }
 
-.a-title:active {
-    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2) inset,
-    -10px -10px 30px rgba(255, 255, 255, 0.4) inset;
+.nav-item.active {
+    background: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    border-color: transparent;
 }
 
-#body {
-    position: absolute;
-    width: 60%;
-    left: 30%;
-    top: 20%;
+.nav-item.active:hover {
+    background: var(--primary-hover);
+    transform: none;
 }
 
-.a-link {
-    background-color: rgba(255, 255, 255, 0.5);
-    position: relative;
-    float: left;
-    width: 100px;
-    height: 100px;
-    margin: 12px;
-    border-radius: 30%;
-    cursor: pointer;
-    transition: all .2s ease;
-    box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.2);
+/* ===== 链接卡片网格 ===== */
+.links-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -8px;
+}
+
+/* ===== 链接卡片 ===== */
+.link-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 14px;
+    padding: 14px 10px;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    transition: all 0.25s ease;
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 8px;
+}
+
+.link-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(79, 70, 229, 0.2);
+}
+
+.link-card:active {
+    transform: translateY(-2px);
+}
+
+.link-img-container {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, rgba(248, 249, 250, 0.8) 0%, rgba(233, 236, 239, 0.8) 100%);
+    border-radius: 12px;
+    padding: 8px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
 .link-img {
-    /* 图片定位 */
-    position: absolute;
-    border-radius: 50%;
-    width: 64px;
-    height: 64px;
-    top: 50%;
-    margin-top: -42px;
-    left: 50%;
-    margin-left: -32px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
-.link-p {
-    /* 文本定位 */
-    position: absolute;
-    width: 68px;
-    bottom: 6px;
-    left: 50%;
-    margin-left: -34px;
+.link-text {
+    color: var(--text-primary);
+    font-size: 12px;
+    font-weight: 600;
     text-align: center;
-    color: rgba(0, 0, 0, 0.9);
-    font-size: 13px;
-    font-weight: bold;
+    margin: 0;
+    line-height: 1.5;
+    word-break: break-word;
+    letter-spacing: -0.01em;
 }
 
-.a-link:hover {
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2),
-    0px 0px 0px rgba(255, 255, 255, 0.4),
-    12px 12px 20px rgba(0, 0, 0, 0.2) inset,
-    -12px -12px 20px rgba(255, 255, 255, 0.4) inset;
+/* ===== 响应式优化 ===== */
+@media (max-width: 991px) {
+    .sidebar {
+        position: relative !important;
+        top: 0 !important;
+        margin-bottom: 24px;
+    }
+
+    .sidebar-title {
+        font-size: 16px;
+    }
 }
 
-.a-link:active {
-    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2) inset,
-    -10px -10px 30px rgba(255, 255, 255, 0.4) inset;
+@media (max-width: 575px) {
+    body {
+        background: var(--bg-gradient);
+    }
+
+    .container-fluid {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    .sidebar {
+        padding: 16px;
+    }
+
+    .sidebar-title {
+        font-size: 15px;
+    }
+
+    .nav-item {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .link-card {
+        padding: 16px 12px;
+    }
+
+    .link-img-container {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 10px;
+    }
+
+    .link-text {
+        font-size: 12px;
+    }
 }
