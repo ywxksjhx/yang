@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>新标签页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* 防止出现双重滚动条 */
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        /* 如果目标网站禁止被 iframe 嵌入（如 Google），显示提示信息 */
+        .fallback-message {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-family: sans-serif;
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<!-- 在这里修改你想显示的网址 -->
+<iframe
+        id="customFrame"
+        onload="checkLoad()"
+        src="http://yang-tool.top/tab"
+></iframe>
+
+<div class="fallback-message" id="msg">
+    <h2>无法在此处直接显示该网页</h2>
+    <p>目标网站设置了安全限制 (X-Frame-Options)，禁止被嵌入。</p>
+</div>
+
+<script>
+    // 简单的检测机制：如果 iframe 加载失败或被拦截，通常 onload 不会触发或内容为空
+    // 注意：由于跨域安全策略，JS 无法直接检测 iframe 内部是否被拦截显示空白，
+    // 但大多数现代浏览器如果拒绝加载，iframe 会保持空白。
+
+    function checkLoad() {
+        const iframe = document.getElementById('customFrame');
+        // 这里只是一个占位逻辑，实际上如果网站禁止 iframe，
+        // 浏览器通常会直接显示一个“拒绝连接”的灰色页面在 iframe 内，
+        // 或者完全空白。
+
+        // 如果你发现某些网站（如 google.com, baidu.com 的部分页面）无法显示，
+        // 是因为它们发送了 'X-Frame-Options: DENY' 或 'SAMEORIGIN' 头。
+        // 这种情况下，你只能做一个简单的跳转页面，或者做一个导航页。
+        window.location.href = "http://yang-tool.top/tab";
+    }
+
+    // 可选：如果你希望不仅仅是嵌入，而是直接跳转（但这会失去“新标签页”的感觉，变成普通浏览）
+    // window.location.href = "https://你的网址.com";
+</script>
+</body>
+</html>

@@ -7,6 +7,9 @@ const data = {
             url: "https://www.ghxi.com/",
             text: "果核剥壳"
         }, {
+            url: "https://www.67tool.com/",
+            text: "即时工具"
+        }, {
             url: "https://www.thepaper.cn/",
             text: "澎湃新闻"
         }, {
@@ -40,8 +43,8 @@ const data = {
             url: "https://tongyi.aliyun.com/qianwen",
             text: "通义千问"
         }, {
-            url: "https://kimi.moonshot.cn/",
-            text: "kimi"
+            url: "https://www.doubao.com/chat/",
+            text: "豆包"
         }, {
             url: "https://36kdh.com/",
             text: "36k导航"
@@ -164,7 +167,7 @@ const data = {
             text: "google"
         }, {
             url: "https://yandex.eu/",
-            text: "印第安搜索"
+            text: "yandex"
         },
     ],
 
