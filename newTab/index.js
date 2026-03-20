@@ -45,7 +45,7 @@ function renderLinks(key) {
         const card = document.createElement('a');
         card.className = 'link-card';
         card.href = item.url;
-        card.target = '_blank';
+        // card.target = '_blank';
         card.rel = 'noopener noreferrer';
 
         const imgContainer = document.createElement('div');
@@ -55,7 +55,7 @@ function renderLinks(key) {
         img.className = 'link-img';
         img.src = ico;
         img.onerror = function () {
-            this.src = "/img/link.png";
+            this.src = "img/link.png";
         };
 
         const text = document.createElement('p');
@@ -111,7 +111,7 @@ function searchLinks(keyword) {
         const card = document.createElement('a');
         card.className = 'link-card';
         card.href = item.url;
-        card.target = '_blank';
+        // card.target = '_blank';
         card.rel = 'noopener noreferrer';
 
         const imgContainer = document.createElement('div');
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Enter') {
             const keyword = searchInput.value.trim();
             if (keyword) {
-                window.open(`https://www.baidu.com/s?wd=${encodeURIComponent(keyword)}`, '_blank');
+                window.open(`https://www.baidu.com/s?wd=${encodeURIComponent(keyword)}`);
             }
         }
     });
@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
     searchBtn.addEventListener('click', () => {
         const keyword = searchInput.value.trim();
         if (keyword) {
-            window.open(`https://www.baidu.com/s?wd=${encodeURIComponent(keyword)}`, '_blank');
+            window.open(`https://www.baidu.com/s?wd=${encodeURIComponent(keyword)}`);
         }
     });
 });
