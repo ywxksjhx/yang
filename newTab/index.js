@@ -54,7 +54,20 @@ function renderLinks(key) {
         const img = document.createElement('img');
         img.className = 'link-img';
         img.src = ico;
+
+        // 设置3秒超时
+        const timeout = setTimeout(() => {
+            if (!img.complete) {
+                img.src = "img/link.png";
+            }
+        }, 3000);
+
+        img.onload = function () {
+            clearTimeout(timeout);
+        };
+        
         img.onerror = function () {
+            clearTimeout(timeout);
             this.src = "img/link.png";
         };
 
@@ -120,7 +133,20 @@ function searchLinks(keyword) {
         const img = document.createElement('img');
         img.className = 'link-img';
         img.src = ico;
+
+        // 设置3秒超时
+        const timeout = setTimeout(() => {
+            if (!img.complete) {
+                img.src = "img/link.png";
+            }
+        }, 3000);
+
+        img.onload = function () {
+            clearTimeout(timeout);
+        };
+        
         img.onerror = function () {
+            clearTimeout(timeout);
             this.src = "img/link.png";
         };
 
