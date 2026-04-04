@@ -7,9 +7,6 @@ const data = {
             url: "https://www.ghxi.com/",
             text: "果核剥壳"
         }, {
-            url: "https://www.67tool.com/",
-            text: "即时工具"
-        }, {
             url: "https://www.thepaper.cn/",
             text: "澎湃新闻"
         }, {
@@ -25,11 +22,8 @@ const data = {
             url: "https://github.com/",
             text: "github"
         }, {
-            url: "https://blog.csdn.net/YWXKSJHX/",
+            url: "https://blog.csdn.net/YWXKSJHX",
             text: "CSDN"
-        }, {
-            url: "http://www.apizza.net/personal/projects/",
-            text: "apizza"
         }, {
             url: "https://www.aliyundrive.com/",
             text: "阿里云盘"
@@ -37,30 +31,79 @@ const data = {
             url: "https://pan.baidu.com/",
             text: "百度云盘"
         }, {
-            url: "https://chatglm.cn/main",
-            text: "智谱清言"
-        }, {
-            url: "https://tongyi.aliyun.com/qianwen",
+            url: "https://www.qianwen.com/",
             text: "通义千问"
         }, {
-            url: "https://www.doubao.com/chat/",
+            url: "https://chatglm.cn/",
+            text: "智谱清言"
+        }, {
+            url: "https://www.doubao.com/",
             text: "豆包"
         }, {
-            url: "https://36kdh.com/",
-            text: "36k导航"
-        }, {
-            url: "https://flingtrainer.com/",
-            text: "风灵月影"
+            url: "https://www.kimi.com/",
+            text: "kimi"
         },
     ],
 
-    /**
-     * 影视娱乐类网站
-     */
+    '娱乐': [
+        {
+            url: "https://store.steampowered.com/",
+            text: "steam"
+        }, {
+            url: "https://www.3dmgame.com/",
+            text: "3DM"
+        }, {
+            url: "https://www.gamersky.com/",
+            text: "游民星空"
+        }, {
+            url: "https://www.gcores.com/",
+            text: "机核网"
+        }, {
+            url: "https://a9vg.com/",
+            text: "A9VG"
+        }, {
+            url: "https://www.ali213.net/",
+            text: "游侠网"
+        }, {
+            url: "https://www.gamer520.com/",
+            text: "Gamer520"
+        }, {
+            url: "https://www.xdgame.com/",
+            text: "XDgame"
+        }, {
+            url: "https://flingtrainer.com/",
+            text: "风灵月影"
+        }, {
+            url: "https://www.nexusmods.com/",
+            text: "NexusMods"
+        }, {
+            url: "https://www.zhihu.com/",
+            text: "知乎"
+        }, {
+            url: "https://weibo.com/",
+            text: "微博"
+        }, {
+            url: "https://www.xiaohongshu.com/",
+            text: "小红书"
+        }, {
+            url: "https://www.douban.com/",
+            text: "豆瓣"
+        }, {
+            url: "https://fanqienovel.com/",
+            text: "番茄小说"
+        }, {
+            url: "https://weread.qq.com/",
+            text: "微信读书"
+        },
+    ],
+
     '影视': [
         {
             url: "https://tv.cctv.com/live/",
             text: "CCTV"
+        }, {
+            url: "https://www.123iptv.tv/cn/",
+            text: "iptv"
         }, {
             url: "https://www.bilibili.com/",
             text: "哔哩哔哩"
@@ -80,6 +123,9 @@ const data = {
             url: "https://www.acfun.cn/",
             text: "Acfun"
         }, {
+            url: "https://www.imdb.com/",
+            text: "imdb电影库"
+        }, {
             url: "https://www.douyu.com/",
             text: "斗鱼"
         }, {
@@ -89,22 +135,22 @@ const data = {
             url: "https://www.douyin.com/",
             text: "抖音"
         }, {
-            url: "https://555u.store/",
-            text: "555影视"
-        }, {
-            url: "https://cupfox.love/",
-            text: "茶杯狐"
-        }, {
             url: "https://www.youtube.com/",
             text: "youtube"
+        }, {
+            url: "https://www.olevod.com/",
+            text: "欧乐影视"
+        }, {
+            url: "https://www.555yy6.com/",
+            text: "555影视"
         },
     ],
 
-    /**
-     * 新闻资讯类网站
-     */
     '新闻': [
         {
+            url: "https://tophub.today/",
+            text: "今日热榜"
+        }, {
             url: "https://news.cctv.com/",
             text: "央视网"
         }, {
@@ -143,13 +189,16 @@ const data = {
         }, {
             url: "https://news.sina.com.cn/",
             text: "新浪新闻"
+        }, {
+            url: "https://www.jiemian.com/",
+            text: "界面新闻"
+        }, {
+            url: "https://sspai.com/",
+            text: "少数派"
         },
     ],
 
-    /**
-     * 搜索引擎类网站
-     */
-    '搜索引擎': [
+    '搜索': [
         {
             url: "https://www.baidu.com/",
             text: "百度"
@@ -163,6 +212,9 @@ const data = {
             url: "https://www.so.com",
             text: "360搜索"
         }, {
+            url: "https://quark.sm.cn/",
+            text: "神马搜索"
+        }, {
             url: "https://www.google.com/",
             text: "google"
         }, {
@@ -171,10 +223,7 @@ const data = {
         },
     ],
 
-    /**
-     * 资源和论坛类网站
-     */
-    '资源论坛': [
+    '资源': [
         {
             url: "https://www.iconfont.cn/",
             text: "阿里图标库"
@@ -191,11 +240,14 @@ const data = {
             url: "https://hellowindows.cn/",
             text: "windows镜像"
         }, {
+            url: "https://ai.itab.link/",
+            text: "ai导航"
+        }, {
+            url: "https://ai-bot.cn/",
+            text: "ai工具集"
+        }, {
             url: "https://search.chongbuluo.com/",
             text: "虫部落搜索"
-        }, {
-            url: "http://shuxiangjia.cn/",
-            text: "书享家"
         }, {
             url: "https://www.xue8nav.com/",
             text: "学吧导航"
@@ -206,7 +258,7 @@ const data = {
             url: "https://36kdh.com/",
             text: "36k导航"
         }, {
-            url: "https://adzhp.xyz/",
+            url: "https://adzhp.cc/",
             text: "艾达杂货铺"
         }, {
             url: "https://pc.qq.com/",
@@ -214,9 +266,6 @@ const data = {
         }, {
             url: "https://www.xitmi.com/",
             text: "系统迷"
-        }, {
-            url: "https://www.pojies.cn/",
-            text: "go破解"
         }, {
             url: "https://www.jb51.net/",
             text: "脚本之家"
@@ -227,58 +276,91 @@ const data = {
             url: "http://www.dugubest.com/",
             text: "独孤求软"
         }, {
-            url: "https://soft.3dmgame.com/",
-            text: "3DM"
+            url: "https://www.coolist.net/",
+            text: "软件小编"
         }, {
-            url: "https://www.gamersky.com/",
-            text: "游民星空"
-        }, {
-            url: "https://www.ali213.net/",
-            text: "游侠网"
-        }, {
-            url: "https://www.gamer520.com/",
-            text: "gamer520"
-        },
-    ],
-
-    /**
-     * 壁纸和图片资源类网站
-     */
-    '壁纸美图': [
-        {
             url: "http://pic.netbian.com/",
             text: "彼岸图网"
         }, {
             url: "https://photo.ihansen.org/",
             text: "美图集"
-        }, {
-            url: "https://bz.zzzmh.cn/index",
-            text: "极简壁纸"
-        }, {
-            url: "https://wallhaven.cc/",
-            text: "真棒壁纸"
-        }, {
-            url: "https://wall.alphacoders.com/?lang=Chinese",
-            text: "高清壁纸"
-        }, {
-            url: "https://wallroom.io/",
-            text: "wall壁纸"
         },
     ],
 
-    /**
-     * 在线工具类网站
-     */
+    '编程': [
+        {
+            url: "https://mrjokersince1997.github.io/My-Notes/#/",
+            text: "Java笔记"
+        }, {
+            url: "https://www.github.com/",
+            text: "github"
+        }, {
+            url: "https://www.gitee.com/",
+            text: "gitee"
+        }, {
+            url: "https://www.w3school.com.cn/",
+            text: "w3school"
+        }, {
+            url: "https://www.runoob.com/",
+            text: "菜鸟教程"
+        }, {
+            url: "https://www.yuque.com/",
+            text: "语雀"
+        }, {
+            url: "https://www.csdn.net/",
+            text: "CSDN"
+        }, {
+            url: "https://juejin.cn/",
+            text: "掘金"
+        }, {
+            url: "https://www.oschina.net/",
+            text: "开源中国"
+        }, {
+            url: "https://stackoverflow.com/",
+            text: "Stack Overflow"
+        }, {
+            url: "https://www.aliyun.com/",
+            text: "阿里云"
+        }, {
+            url: "https://ai.youdao.com/",
+            text: "有道智云"
+        }, {
+            url: "https://www.huaweicloud.com/",
+            text: "华为云"
+        }, {
+            url: "https://cloud.tencent.com/",
+            text: "腾讯云"
+        }, {
+            url: "https://www.xfyun.cn/",
+            text: "讯飞云"
+        }, {
+            url: "https://www.qiniu.com/",
+            text: "七牛云"
+        }, {
+            url: "https://www.svyun.com/",
+            text: "速维云"
+        }, {
+            url: "https://www.upyun.com/",
+            text: "又拍云"
+        }, {
+            url: "https://mvnrepository.com/",
+            text: "Maven仓库"
+        }, {
+            url: "https://www.npmjs.com/",
+            text: "npm仓库"
+        }, {
+            url: "https://pypi.org/",
+            text: "pip仓库"
+        }, {
+            url: "https://mp.weixin.qq.com/",
+            text: "微信公众平台"
+        },
+    ],
+
     '工具': [
         {
-            url: "https://1024doc.com/",
-            text: "CodeGen"
-        }, {
             url: "https://tool.browser.qq.com/",
             text: "帮小忙"
-        }, {
-            url: "https://fse.agilestudio.cn/",
-            text: "33搜帧"
         }, {
             url: "https://www.iamwawa.cn/",
             text: "蛙蛙工具"
@@ -286,11 +368,17 @@ const data = {
             url: "https://www.67tool.com/",
             text: "即时工具"
         }, {
+            url: "https://tool.lu/",
+            text: "在线工具"
+        }, {
+            url: "https://www.ilovepdf.com/zh-cn",
+            text: "我爱PDF"
+        }, {
             url: "https://tool.oschina.net/codeformat/",
             text: "代码格式化"
         }, {
-            url: "https://www.iloveimg.com/zh-cn",
-            text: "图片编辑"
+            url: "https://www.ip138.com/",
+            text: "IP查询"
         }, {
             url: "https://www.sojson.com/",
             text: "json在线"
@@ -304,14 +392,17 @@ const data = {
             url: "https://cli.im/",
             text: "草料二维码"
         }, {
+            url: "https://www.iloveimg.com/zh-cn",
+            text: "图片编辑"
+        }, {
+            url: "https://www.remove.bg/",
+            text: "AI抠图"
+        }, {
+            url: "https://fse.agilestudio.cn/",
+            text: "33搜帧"
+        }, {
             url: "https://www.ping.cn/",
             text: "ping检测"
-        }, {
-            url: "https://zlib.shop/",
-            text: "图书馆"
-        }, {
-            url: "https://www.coolist.net/windows/",
-            text: "酷软清单"
         }, {
             url: "https://pandao.github.io/editor.md/",
             text: "Markdown编辑器"

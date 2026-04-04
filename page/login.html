@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>系统登录</title>
+    <link href="https://unpkg.com/layui@2.8.18/dist/css/layui.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1e9fff 0%, #16baaa 100%);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-box {
+            width: 360px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 4px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-title {
+            text-align: center;
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .layui-form-item {
+            margin-bottom: 20px;
+        }
+
+        .layui-input {
+            height: 44px;
+            line-height: 44px;
+        }
+
+        .layui-btn-fluid {
+            height: 44px;
+            line-height: 44px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<div class="login-box">
+    <div class="login-title">🔐 管理系统</div>
+
+    <form action="/dologin" class="layui-form" method="post">
+        <div class="layui-form-item">
+            <input class="layui-input" lay-affix="username" lay-verify="required|account"
+                   name="username" placeholder="用户名" type="text">
+        </div>
+
+        <div class="layui-form-item">
+            <input class="layui-input" lay-affix="eye" lay-verify="required|password"
+                   name="password" placeholder="密码" type="password">
+        </div>
+
+        <div class="layui-form-item">
+            <button class="layui-btn layui-btn-normal layui-btn-fluid" lay-filter="login"
+                    lay-submit="" type="submit">
+                登 录
+            </button>
+        </div>
+    </form>
+</div>
+
+<script src="https://unpkg.com/layui@2.8.18/dist/layui.js"></script>
+<script>
+    layui.use(['form', 'layer'], function () {
+        let form = layui.form;
+        let layer = layui.layer;
+
+        // 获取 URL 参数
+        let urlParams = new URLSearchParams(window.location.search);
+        let source = urlParams.get('source');
+        // 统一处理所有 source 状态
+        let msgcfg = {
+            'failure': {text: '用户名或密码错误', icon: 2, anim: 6},
+            'logout': {text: '已成功退出登录', icon: 1},
+            'invalid': {text: '登录已过期，请重新登录', icon: 0},
+            'expired': {text: '账号已在其他地方登录', icon: 2}
+        }[source];
+        if (msgcfg) {
+            layer.msg(msgcfg.text, {icon: msgcfg.icon, anim: msgcfg.anim});
+        }
+
+        form.verify({
+            username: function (value, item) { // value：表单的值，item：表单的DOM对象
+
+            }
+        });
+        // 进行登录操作
+        form.on('submit(login)', function (data) {
+            let field = data.field;
+            if (field.username == '') {
+                layer.msg('用户名不能为空');
+                return false;
+            }
+            if (field.password == '') {
+                layer.msg('密码不能为空');
+                return false;
+            }
+            // 放行 自动执行登录操作
+            return true;
+        });
+    });
+</script>
+</body>
+</html>
