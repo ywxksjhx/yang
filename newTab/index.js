@@ -65,7 +65,7 @@ function renderLinks(key) {
         img.onload = function () {
             clearTimeout(timeout);
         };
-        
+
         img.onerror = function () {
             clearTimeout(timeout);
             this.src = "img/link.png";
@@ -144,7 +144,7 @@ function searchLinks(keyword) {
         img.onload = function () {
             clearTimeout(timeout);
         };
-        
+
         img.onerror = function () {
             clearTimeout(timeout);
             this.src = "img/link.png";
