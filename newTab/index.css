@@ -2,7 +2,7 @@
 :root {
     --primary-color: #4f46e5;
     --primary-hover: #4338ca;
-    --bg-gradient: linear-gradient(135deg, #66a6ff 0%, #89f7fe 100%);
+    --bg-gradient: linear-gradient(135deg, #66a6ff 0%, #cdffcd 100%);
     --sidebar-bg: rgba(255, 255, 255, 0.15);
     --card-bg: rgba(255, 255, 255, 0.75);
     --text-primary: #1f2937;

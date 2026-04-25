@@ -24,6 +24,8 @@ const data = {
     }, {
         url: "https://chatglm.cn/", text: "智谱清言"
     }, {
+        url: "https://aistudio.xiaomimimo.com/#/c", text: "mimo"
+    }, {
         url: "https://www.doubao.com/", text: "豆包"
     }, {
         url: "https://www.kimi.com/", text: "kimi"
